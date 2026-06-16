@@ -11,8 +11,7 @@
   PLACEHOLDER（要差し替え）:
   - 氏名 / ローマ字: 武山颯一郎 / Soichiro Takeyama
   - 出身学部・学科: 日本大学 理工学部 応用情報工学科
-  - 連絡先：GitHub の URL（未設定の場合は当該 <li> を削除可）
-  - Projects の各項目（サンプル）
+  - 連絡先：GitHub の URL（未設定の場合は当該 li を削除可）
   これらは編集しやすいよう、本文中の「@placeholder」コメントで示しています。
 ============================================================ -->
 
@@ -184,7 +183,7 @@
   .btn-ghost{ color:var(--primary-deep); background:transparent; }
   .btn-ghost:hover{ background:color-mix(in srgb, var(--primary) 10%, transparent); color:var(--primary-deep); }
 
-  /* ---------- Signature: latent-space → synthetic series figure ---------- */
+  /* ---------- Signature: latent-space -> synthetic series figure ---------- */
   .viz{
     position:relative; margin:0; border:1px solid var(--line);
     background:linear-gradient(180deg, var(--surface), color-mix(in srgb, var(--surface) 70%, var(--bg)));
@@ -224,6 +223,7 @@
   .side-card dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:.35rem .9rem; font-size:.95rem; }
   .side-card dt{ color:var(--ink-soft); white-space:nowrap; }
   .side-card dd{ margin:0; }
+  .block-label{ font-family:var(--font-mono); font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 1.2rem; }
 
   /* ---------- Research ---------- */
   .pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:2.4rem; }
@@ -240,19 +240,18 @@
     padding:.35rem .7rem; border-radius:999px;
   }
 
-  /* ---------- Projects ---------- */
-  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
-  @media (max-width:920px){ .cards{ grid-template-columns:1fr 1fr; } }
+  /* ---------- Projects (research themes) ---------- */
+  .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; }
   @media (max-width:620px){ .cards{ grid-template-columns:1fr; } }
   .card{
     display:flex; flex-direction:column; background:var(--surface);
-    border:1px solid var(--line); border-radius:var(--radius); padding:1.5rem 1.4rem;
+    border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem 1.5rem;
     transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
   }
   .card:hover{ transform:translateY(-3px); box-shadow:0 22px 38px -30px rgba(31,75,64,.6); border-color:color-mix(in srgb,var(--primary) 35%,var(--line)); }
   .card .role{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); }
-  .card h3{ font-family:var(--font-display); font-weight:600; font-size:1.16rem; margin:.45rem 0 .6rem; line-height:1.4; }
-  .card p{ font-size:.92rem; color:var(--ink-soft); margin:0 0 1.1rem; flex:1; }
+  .card h3{ font-family:var(--font-display); font-weight:600; font-size:1.18rem; margin:.45rem 0 .7rem; line-height:1.5; }
+  .card p{ font-size:.93rem; color:var(--ink-soft); margin:0 0 1.2rem; flex:1; }
   .card .stack{ display:flex; flex-wrap:wrap; gap:.4rem; }
   .card .stack span{ font-family:var(--font-mono); font-size:.68rem; color:var(--ink-soft); border:1px solid var(--line); border-radius:6px; padding:.2rem .45rem; }
 
@@ -264,20 +263,29 @@
   .skill-group li{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; font-size:.96rem; }
   .skill-group .level{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.04em; color:var(--ink-faint); white-space:nowrap; }
 
-  /* ---------- Publications ---------- */
+  /* ---------- Publications & Awards ---------- */
+  .sub-h{ font-family:var(--font-mono); font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin:2.4rem 0 .2rem; }
+  .sub-h:first-of-type{ margin-top:1.2rem; }
   .pubs{ list-style:none; margin:0; padding:0; counter-reset:pub; }
   .pubs li{ display:grid; grid-template-columns:auto 1fr; gap:1.2rem; padding:1.3rem 0; border-bottom:1px solid var(--line-soft); }
   .pubs li:first-child{ border-top:1px solid var(--line-soft); }
   .pubs .marker{ counter-increment:pub; font-family:var(--font-mono); font-size:.8rem; color:var(--primary); padding-top:.15rem; }
   .pubs .marker::before{ content:"[" counter(pub) "]"; }
   .pubs .ref{ margin:0; }
+  .pubs .ref .author strong{ font-weight:700; color:var(--ink); }
   .pubs .ref .title{ font-weight:700; }
   .pubs .ref .venue{ color:var(--ink-soft); }
   .pubs .ref .meta{ display:block; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.03em; color:var(--ink-faint); margin-top:.4rem; }
   .pubs .badge{ display:inline-block; font-family:var(--font-mono); font-size:.64rem; letter-spacing:.05em; color:var(--primary-deep); border:1px solid color-mix(in srgb,var(--primary) 30%,transparent); border-radius:5px; padding:.05rem .4rem; margin-left:.5rem; }
-  .pubs-empty{ font-family:var(--font-mono); font-size:.82rem; letter-spacing:.04em; color:var(--ink-faint); border:1px dashed var(--line); border-radius:var(--radius); padding:1.4rem 1.5rem; margin:1.4rem 0 0; }
-  .pubs:empty + .pubs-empty{ display:block; }
-  .pubs:not(:empty) + .pubs-empty{ display:none; }
+
+  .awards{ list-style:none; margin:0; padding:0; }
+  .awards li{ display:grid; grid-template-columns:auto 1fr; gap:1.2rem; padding:1.3rem 0; border-bottom:1px solid var(--line-soft); }
+  .awards li:first-child{ border-top:1px solid var(--line-soft); }
+  .awards .marker{ font-family:var(--font-mono); font-size:.9rem; color:var(--primary); padding-top:.05rem; }
+  .awards .ref{ margin:0; }
+  .awards .ref .title{ font-weight:700; }
+  .awards .ref .venue{ color:var(--ink-soft); }
+  .awards .ref .meta{ display:block; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.03em; color:var(--ink-faint); margin-top:.4rem; }
 
   /* ---------- Contact ---------- */
   .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.6rem,5vw,3.5rem); align-items:start; }
@@ -367,13 +375,7 @@
       <h2 id="profile-h">プロフィール</h2>
       <div class="profile-grid">
         <div>
-          <p class="lead">
-            深層生成モデルと時系列モデリングを基盤に、医療データの利活用とプライバシ保護の両立を目指して研究を行っています。
-          </p>
-          <p>
-            医療分野における時系列データは、診療の質向上や臨床研究の基盤として高い価値を持つ一方で、プライバシ上の制約により取得・共有・二次利用が容易ではありません。本研究では、こうした制約に対し、原データの統計的性質を保持しつつ個人を特定し得ない合成データを生成する枠組みに取り組んでいます。とりわけ、潜在変数モデルが学習する低次元表現に着目し、潜在空間の幾何的構造と生成系列の臨床的妥当性との対応関係を定量的に明らかにすることを目標としています。
-          </p>
-          <h3 style="font-family:var(--font-mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:2rem 0 1.2rem;">学歴・所属</h3>
+          <h3 class="block-label">学歴・所属</h3>
           <ul class="timeline">
             <li>
               <span class="when">2026.04 –</span>
@@ -395,8 +397,7 @@
             <dt>主分野</dt><dd>深層生成モデル</dd>
             <dt>応用</dt><dd>医療時系列データ（EHR・バイタル）</dd>
             <dt>関心</dt><dd>表現学習・プライバシ保護</dd>
-            <dt>学会</dt><dd>情報処理学会（学生会員）</dd>
-            <dt>言語</dt><dd>日本語（母語）／ 英語（読解・技術文書）</dd>
+            <dt>学会</dt><dd>電気学会（学生会員）</dd>
           </dl>
         </aside>
       </div>
@@ -446,31 +447,24 @@
     </div>
   </section>
 
-  <!-- ===================== PROJECTS ===================== -->
+  <!-- ===================== PROJECTS (研究テーマ) ===================== -->
   <section class="section" id="projects" aria-labelledby="projects-h">
     <div class="wrap reveal">
       <p class="eyebrow">Projects</p>
-      <h2 id="projects-h">プロジェクト</h2>
-      <p class="lead">研究および学習の過程で取り組んだ実装・検討の一部です。<span style="color:var(--ink-faint);font-size:.85em;">（以下はサンプルです）</span></p>
-      <!-- @placeholder Projects（各カードを実際の取り組みに差し替え） -->
+      <h2 id="projects-h">研究テーマ</h2>
+      <p class="lead">学部から大学院にかけて取り組んできた研究テーマです。</p>
       <div class="cards">
         <article class="card">
-          <span class="role">研究プロトタイプ</span>
-          <h3>時系列VAEによるバイタルサインの合成</h3>
-          <p>集中治療下のバイタルサイン系列を対象に、変分オートエンコーダで潜在表現を学習し、合成系列の統計的整合性を評価した実装。</p>
-          <div class="stack"><span>Python</span><span>PyTorch</span><span>NumPy</span></div>
+          <span class="role">学士研究</span>
+          <h3>Transformerモデルを用いた乳がん患者の造影背臥位乳房MRIの生成に関する研究</h3>
+          <p>術前乳がん患者の腹臥位乳房MRIを対象に、Transformer および Swin Transformer を用いて非造影像から造影像への変換、ならびに背臥位像の生成を検討。撮像体位と造影の差異を計算的に補完する手法を探索した。</p>
+          <div class="stack"><span>Transformer</span><span>Swin Transformer</span><span>医用画像生成</span><span>乳房MRI</span></div>
         </article>
         <article class="card">
-          <span class="role">可視化ツール</span>
-          <h3>潜在空間補間の対話的可視化</h3>
-          <p>学習済み潜在空間における2点間の線形・球面補間を操作し、生成される時系列波形の変化をブラウザ上で観察できるツール。</p>
-          <div class="stack"><span>JavaScript</span><span>D3.js</span><span>Python</span></div>
-        </article>
-        <article class="card">
-          <span class="role">評価フレームワーク</span>
-          <h3>合成データのプライバシ評価</h3>
-          <p>メンバーシップ推論攻撃や近傍距離指標を用い、生成された合成データの再識別リスクを定量化する評価パイプライン。</p>
-          <div class="stack"><span>Python</span><span>scikit-learn</span><span>pandas</span></div>
+          <span class="role">修士研究</span>
+          <h3>潜在空間における合成時系列患者データの生成に関する研究</h3>
+          <p>潜在変数生成モデルにより時系列患者データを合成し、潜在空間からのサンプリング・補間を通じて、忠実性・有用性・プライバシのバランスに優れた人工データの生成を目指す。潜在空間の構造と生成系列の妥当性との対応を解析する。</p>
+          <div class="stack"><span>深層生成モデル</span><span>VAE / 拡散モデル</span><span>時系列</span><span>合成データ</span></div>
         </article>
       </div>
     </div>
@@ -485,9 +479,8 @@
         <div class="skill-group">
           <h3>プログラミング言語</h3>
           <ul>
-            <li><span>Python</span><span class="level">日常的に使用</span></li>
+            <li><span>Python</span><span class="level">研究で使用</span></li>
             <li><span>C / C++</span><span class="level">基礎</span></li>
-            <li><span>JavaScript</span><span class="level">可視化用途</span></li>
             <li><span>SQL</span><span class="level">基礎</span></li>
           </ul>
         </div>
@@ -497,16 +490,12 @@
             <li><span>PyTorch</span><span class="level">研究で使用</span></li>
             <li><span>深層生成モデル（VAE・拡散）</span><span class="level">研究主題</span></li>
             <li><span>時系列モデリング</span><span class="level">研究主題</span></li>
-            <li><span>scikit-learn</span><span class="level">実務的に使用</span></li>
           </ul>
         </div>
         <div class="skill-group">
           <h3>ツール・基盤</h3>
           <ul>
-            <li><span>Git / GitHub</span><span class="level">日常的に使用</span></li>
-            <li><span>Docker</span><span class="level">基礎</span></li>
-            <li><span>Linux / シェル</span><span class="level">実務的に使用</span></li>
-            <li><span>LaTeX</span><span class="level">論文執筆</span></li>
+            <li><span>Git / GitHub</span><span class="level">研究で使用</span></li>
           </ul>
         </div>
         <div class="skill-group">
@@ -514,7 +503,7 @@
           <ul>
             <li><span>論文調査・サーベイ</span><span class="level">—</span></li>
             <li><span>実験設計・統計的評価</span><span class="level">—</span></li>
-            <li><span>学術発表・技術文書作成</span><span class="level">—</span></li>
+            <li><span>学術発表</span><span class="level">—</span></li>
             <li><span>データ前処理・可視化</span><span class="level">—</span></li>
           </ul>
         </div>
@@ -527,22 +516,41 @@
     <div class="wrap reveal">
       <p class="eyebrow">Publications</p>
       <h2 id="pub-h">業績・発表</h2>
-      <p class="lead">学会発表や論文等の業績はこちらに掲載予定です。</p>
-      <!-- @placeholder Publications: 業績が出来次第、下記 <ol class="pubs"> 内に <li> として追記してください。
-           記入例:
-           <li>
-             <span class="marker" aria-hidden="true"></span>
-             <p class="ref">
-               <span class="author">著者名.</span>
-               <span class="title">「題目」.</span>
-               <span class="venue">発表先（会議・論文誌）.</span>
-               <span class="badge">国内会議</span>
-               <span class="meta">発表年月</span>
-             </p>
-           </li>
-      -->
-      <ol class="pubs" style="list-style:none;"></ol>
-      <p class="pubs-empty">現在準備中です。</p>
+
+      <h3 class="sub-h">学会発表</h3>
+      <ol class="pubs">
+        <li>
+          <span class="marker" aria-hidden="true"></span>
+          <p class="ref">
+            <span class="author"><strong>武山颯一郎</strong>, 佐々木颯, 関弘翔, 宮野咲紀, 石橋直也, 天野真紀, 細野裕行.</span>
+            <span class="title">「腹臥位乳房MRIにおける非造影像を造影像へ変換するSwin Transformerモデルの検討」.</span>
+            <span class="venue">令和8年 電気学会全国大会, 口頭発表（一般）, 東北学院大学 五橋キャンパス.</span>
+            <span class="badge">全国大会</span>
+            <span class="meta">2026年3月14日</span>
+          </p>
+        </li>
+        <li>
+          <span class="marker" aria-hidden="true"></span>
+          <p class="ref">
+            <span class="author"><strong>武山颯一郎</strong>, 佐々木颯, 関弘翔, 宮野咲紀, 石橋直也, 天野真紀, 細野裕行.</span>
+            <span class="title">「腹臥位乳房MRIにおける非造影像を造影像へ変換するTransformerモデルの検討」.</span>
+            <span class="venue">令和7年度（2025年度）第21回 電気学会東京支部千葉支所研究発表会, 口頭発表（一般）, 日本大学 八海山セミナーハウス（南魚沼市）.</span>
+            <span class="badge">支部研究発表会</span>
+            <span class="meta">2025年11月8日</span>
+          </p>
+        </li>
+      </ol>
+
+      <h3 class="sub-h">受賞</h3>
+      <ul class="awards">
+        <li>
+          <span class="marker" aria-hidden="true">★</span>
+          <p class="ref">
+            <span class="title">敢闘賞</span> <span class="venue">— 電気学会東京支部千葉支所.</span>
+            <span class="meta">2026年1月 ／ 対象：腹臥位乳房MRIにおける非造影像を造影像へ変換するTransformerモデルの検討</span>
+          </p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -563,7 +571,7 @@
         <!-- @placeholder 連絡先・各種リンク -->
         <ul class="contact-list" aria-label="連絡先一覧">
           <li><a href="mailto:csso26023@g.nihon-u.ac.jp"><span class="k">Email</span><span class="v">csso26023@g.nihon-u.ac.jp</span></a></li>
-          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer"><span class="k">GitHub</span><span class="v">github.com/your-id</span></a></li>
+          <li><a href="https://github.com/Tyama-S/" target="_blank" rel="noopener noreferrer"><span class="k">GitHub</span><span class="v">github.com/Tyama-S</span></a></li>
         </ul>
       </div>
     </div>
